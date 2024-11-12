@@ -52,7 +52,7 @@ POST - /MUTANT/
 
 Si se detecta un mutante, debe devolver un HTTP -OK, debe devolver -Prohibido
 
-## nivel 3
+## Nivel 3
 
 Agregar una base de datos que almacene las secuencias de ADN verificadas con la API
 

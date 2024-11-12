@@ -5,19 +5,26 @@ public class Main {
 
         DetectorMutante dm = new DetectorMutante();
         String[] dna = { "ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };
-        String[] otro = { "ATTTTGCGA"  };
+        String[] otro = { "ATGCGA"  };
 
-        DetectorMutante.isMutant(otro);
-       /** boolean rtado=  DetectorMutante.isMutant(dna);
-
-        if(rtado==true)
+      //  DetectorMutante.isMutant(dna);
+    if( DetectorMutante.isMutant(dna))
         {
-            System.out.println("Es mutante");
+            System.out.println("\n true");
         }
         else {
-            System.out.println("no es mutante");
-        } */
+            System.out.println("\n false");
+        } 
+
+
+
+
+        System.out.println("\n ************ Programa finalizado con exito!! *****************");
 
     }
+
+
+
+    
 
 }

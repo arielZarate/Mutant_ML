@@ -2,7 +2,7 @@ package level_1;
 
 public class DetectorMutante {
 
-    static int countSequence = 0;
+  int countSequence = 0;
     /*
      * 
      * ha pedido que crees un programa con un método o función con la siguiente
@@ -16,29 +16,71 @@ public class DetectorMutante {
     // nota : dna[0].charAt(0); // Esto devolverá 'A', que es el primer carácter de
     // "ATGCGA"
 
-    // para no cerar clases estatico
-    public static void isMutant(String[] dna) {
-        boolean mutant = false;
+    // para no crea clases estatico
+    public static boolean isMutant(String[] dna) {
+     int countSequence=0;
+
+
+
+     //filas horizontales 
         for (int i = 0; i < dna.length; i++) {
 
- 
-            for (int j = 0; j < dna[i].length() - 3; j++) { // -3 para evitar desbordar el índice
+            for (int j = 0; j < dna[i].length() - 3; j++) { 
                 if (dna[i].charAt(j) == dna[i].charAt(j + 1) &&
                         dna[i].charAt(j) == dna[i].charAt(j + 2) &&
                         dna[i].charAt(j) == dna[i].charAt(j + 3)) {
-                    mutant = true;
-                    // return mutant; // Retorna inmediatamente si encuentra la secuencia
+                    countSequence++;
+                    if (countSequence > 1) return true; 
 
                 }
             }
         }
 
-        if (mutant == true) {
-            System.out.println("es mutante ");
+        // secuencia vertical
+
+        for (int i = 0; i < dna.length - 3; i++) {
+            for (int j = 0; j < dna[i].length(); j++) {
+                if (dna[i].charAt(j) == dna[i + 1].charAt(j) &&
+                        dna[i].charAt(j) == dna[i + 2].charAt(j) &&
+                        dna[i].charAt(j) == dna[i + 3].charAt(j)) {
+                            countSequence++;
+                            if (countSequence > 1) return true; // Corta si se encuentran más de una secuencia
+
+                }
+
+            }
         }
-        else{
-            System.out.println("es humano");
-        }
+
+
+
+            // Verificar secuencias diagonales descendentes (izquierda a derecha)
+            for (int i = 0; i < dna.length - 3; i++) {
+                for (int j = 0; j < dna[i].length() - 3; j++) {
+                    if (dna[i].charAt(j) == dna[i + 1].charAt(j + 1) &&
+                        dna[i].charAt(j) == dna[i + 2].charAt(j + 2) &&
+                        dna[i].charAt(j) == dna[i + 3].charAt(j + 3)) {
+                            countSequence++;
+                            if (countSequence > 1) return true; // Corta si se encuentran más de una secuencia
+                    }
+                }
+            }
+    
+            // Verificar secuencias diagonales ascendentes (derecha a izquierda)
+            for (int i = 3; i < dna.length; i++) {
+                for (int j = 0; j < dna[i].length() - 3; j++) {
+                    if (dna[i].charAt(j) == dna[i - 1].charAt(j + 1) &&
+                        dna[i].charAt(j) == dna[i - 2].charAt(j + 2) &&
+                        dna[i].charAt(j) == dna[i - 3].charAt(j + 3)) {
+                            countSequence++;
+                            if (countSequence > 1) return true; // Corta si se encuentran más de una secuencia
+                    }
+                }
+            }
+
+       
+            return false;
+
+        
 
     }
 
