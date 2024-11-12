@@ -25,7 +25,7 @@ Segunda página
 
 Ejemplo (caso mutante)
 
-String[]dna={"ATGCGA","CAGTGC","TTATGT","CCCCTA","TCACTG"}:
+String[]dna={"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"}:
 En el caso n, al llamar a la función isMutant(dna) se devuelve verdadero.
 
 # Desarrollar el algoritmo de la forma más eficiente posible:
