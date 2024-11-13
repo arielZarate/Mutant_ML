@@ -42,15 +42,15 @@ Se creó una API REST, se alojó esta API en una nube gratuita (Google App Engin
 
 ```java
 
-POST - /MUTANT/
+POST - /mutant/
 
 {
-"dna:["ATGCGA","CAGTGC","TTATGT","AGAAAGG","TCACTG"]
+"dna:["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCta","TCACTG"]
 }
 
 ```
 
-Si se detecta un mutante, debe devolver un HTTP -OK, debe devolver -Prohibido
+Si se detecta un mutante, debe devolver un HTTP -OK, debe devolver - 403 -Forbidden
 
 ## Nivel 3
 
@@ -71,6 +71,6 @@ Pruebas automatizadas, cobertura de código >80%
 
 Entregables;
 
-- Código fuente (para kevek 2 y 3: en un repositorio de GitHub)
+- Código fuente (para level 2 y 3: en un repositorio de GitHub)
 - Instrucciones sobre cómo ejecutar los programas o la API (para los niveles 2 y 3 \_ en el archivo README de GitHub)
 - URL DE LA API (NIVEL 2 Y 3)

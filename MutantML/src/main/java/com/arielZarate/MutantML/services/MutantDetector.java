@@ -1,8 +1,11 @@
-package level_1;
+package com.arielZarate.MutantML.services;
 
-public class DetectorMutante {
+import org.springframework.stereotype.Component;
 
-  int countSequence = 0;
+@Component
+public class MutantDetector {
+
+    int countSequence = 0;
     /*
      * 
      * ha pedido que crees un programa con un método o función con la siguiente
@@ -17,20 +20,19 @@ public class DetectorMutante {
     // "ATGCGA"
 
     // para no crea clases estatico
-    public static boolean isMutant(String [] dna) {
-     int countSequence=0;
+    public  boolean isMutant(String[] dna) {
+        int countSequence = 0;
 
-
-
-     //filas horizontales 
+        // filas horizontales
         for (int i = 0; i < dna.length; i++) {
 
-            for (int j = 0; j < dna[i].length() - 3; j++) { 
+            for (int j = 0; j < dna[i].length() - 3; j++) {
                 if (dna[i].charAt(j) == dna[i].charAt(j + 1) &&
                         dna[i].charAt(j) == dna[i].charAt(j + 2) &&
                         dna[i].charAt(j) == dna[i].charAt(j + 3)) {
                     countSequence++;
-                    if (countSequence > 1) return true; 
+                    if (countSequence > 1)
+                        return true;
 
                 }
             }
@@ -43,44 +45,42 @@ public class DetectorMutante {
                 if (dna[i].charAt(j) == dna[i + 1].charAt(j) &&
                         dna[i].charAt(j) == dna[i + 2].charAt(j) &&
                         dna[i].charAt(j) == dna[i + 3].charAt(j)) {
-                            countSequence++;
-                            if (countSequence > 1) return true; // Corta si se encuentran más de una secuencia
+                    countSequence++;
+                    if (countSequence > 1)
+                        return true; // Corta si se encuentran más de una secuencia
 
                 }
 
             }
         }
 
-
-
-            // Verificar secuencias diagonales descendentes (izquierda a derecha)
-            for (int i = 0; i < dna.length - 3; i++) {
-                for (int j = 0; j < dna[i].length() - 3; j++) {
-                    if (dna[i].charAt(j) == dna[i + 1].charAt(j + 1) &&
+        // Verificar secuencias diagonales descendentes (izquierda a derecha)
+        for (int i = 0; i < dna.length - 3; i++) {
+            for (int j = 0; j < dna[i].length() - 3; j++) {
+                if (dna[i].charAt(j) == dna[i + 1].charAt(j + 1) &&
                         dna[i].charAt(j) == dna[i + 2].charAt(j + 2) &&
                         dna[i].charAt(j) == dna[i + 3].charAt(j + 3)) {
-                            countSequence++;
-                            if (countSequence > 1) return true; // Corta si se encuentran más de una secuencia
-                    }
+                    countSequence++;
+                    if (countSequence > 1)
+                        return true; // Corta si se encuentran más de una secuencia
                 }
             }
-    
-            // Verificar secuencias diagonales ascendentes (derecha a izquierda)
-            for (int i = 3; i < dna.length; i++) {
-                for (int j = 0; j < dna[i].length() - 3; j++) {
-                    if (dna[i].charAt(j) == dna[i - 1].charAt(j + 1) &&
+        }
+
+        // Verificar secuencias diagonales ascendentes (derecha a izquierda)
+        for (int i = 3; i < dna.length; i++) {
+            for (int j = 0; j < dna[i].length() - 3; j++) {
+                if (dna[i].charAt(j) == dna[i - 1].charAt(j + 1) &&
                         dna[i].charAt(j) == dna[i - 2].charAt(j + 2) &&
                         dna[i].charAt(j) == dna[i - 3].charAt(j + 3)) {
-                            countSequence++;
-                            if (countSequence > 1) return true; // Corta si se encuentran más de una secuencia
-                    }
+                    countSequence++;
+                    if (countSequence > 1)
+                        return true; // Corta si se encuentran más de una secuencia
                 }
             }
+        }
 
-       
-            return false;
-
-        
+        return false;
 
     }
 
