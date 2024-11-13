@@ -52,6 +52,9 @@ POST - /mutant/
 
 Si se detecta un mutante, debe devolver un HTTP -OK, debe devolver - 403 -Forbidden
 
+
+Se utilizo el mismo archivo del level1
+
 ## Nivel 3
 
 Agregar una base de datos que almacene las secuencias de ADN verificadas con la API
@@ -74,3 +77,29 @@ Entregables;
 - Código fuente (para level 2 y 3: en un repositorio de GitHub)
 - Instrucciones sobre cómo ejecutar los programas o la API (para los niveles 2 y 3 \_ en el archivo README de GitHub)
 - URL DE LA API (NIVEL 2 Y 3)
+
+
+
+
+# Usar la api
+
+solo se podra acceder a los metodos 
+- GET:`http://3.22.221.100:8080/mutant/`
+- GET:`http://3.22.221.100:8080/mutant/stats`
+
+
+## images de local y public 
+
+![stats](/images/stats.png)
+
+![stats](/images/mutant.png)
+
+remoto
+
+
+![stats](/images/remoto.png)
+
+# AWS
+
+Se desplego en AWS 
+![stats](/images/linux.png)
