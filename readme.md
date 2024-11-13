@@ -99,6 +99,12 @@ remoto
 
 ![stats](/images/remoto.png)
 
+
+
+## Base de datos MONGODB
+
+![mongo](/images/MONGO%20DB.png)
+
 # AWS
 
 Se desplego en AWS 
